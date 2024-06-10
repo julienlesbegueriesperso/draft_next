@@ -1,5 +1,5 @@
 'use client'
-import { JsonEditor } from 'json-edit-react'
+// import { JsonEditor } from 'json-edit-react'
 import { useEffect, useState } from 'react'
 import { getPapers } from '../server-actions'
 
@@ -11,13 +11,9 @@ export default function JsonEditorPage() {
         getPapers().then(p => setPapers(p))
       },[])
 
-    return (<JsonEditor
-    theme={'githubDark'}
-    data={ papers }
-    onUpdate={ ({newData} ) => {
-      console.log(newData)
-      setPapers([...(newData as Array<any>)])
-  }}/>)
+    return (<main>
+      <div>{JSON.stringify(papers)}</div>
+    </main>)
 
 
 }

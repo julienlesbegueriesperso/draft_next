@@ -32,10 +32,11 @@ export default function Home() {
       <Button variant="solid"><Link href="/editor">Editor</Link></Button>
       {papers && papers.map((paper,i) => (
         <div key={"paper_"+i} className="overflow-auto h-96" >
-          <h4 className="font-bold">Title: {paper["title_s"]}</h4>
+          <p>{JSON.stringify(paper)}</p>
+          {/* <h4 className="font-bold">Title: {paper["title_s"]}</h4>
           <h4>Authors: {paper["authFullName_s"].join(", ")}</h4>
           <Divider className="m-5" orientation="horizontal"></Divider>
-          <p>{paper["abstract_s"]}</p>
+          <p>{paper["abstract_s"]}</p> */}
 
         </div>
       ))}
